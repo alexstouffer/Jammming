@@ -33,17 +33,16 @@ class App extends Component {
     this.setState({playlistTracks: tracks});
   }
   removeTrack(track) {
-    let tracks = this.state.playlistTracks;
-    let results = tracks.filter(i => {
-      i !== track.id;
-    });
-    this.setState({playlistTracks: results});
+    let playlistTracks = this.state.playlistTracks.filter(
+      i => i.id !== track.id
+    );
+    this.setState({playlistTracks});
   }
   updatePlaylistName(name) {
     this.setState({playlistName: name});
   }
   savePlaylist() {
-    let trackURIs = this.state.playlistTracks;
+    const trackURIs = this.state.playlistTracks.map(track => { return track.uri});
     Spotify.savePlaylist(this.state.playlistName, trackURIs).then(() => {
       this.setState(
         {
