@@ -3,6 +3,8 @@ import config from './config';
 const spotifyURI = 'https://accounts.spotify.com/authorize';
 const spotifyAPI = 'https://api.spotify.com/v1/'
 
+
+//replace config.ClientID with your ClientID issued by spotify. Wrap in ''. Remove import from config.
 const clientID = config.clientID;
 const redirectURI = 'http://localhost:3000/'
 
