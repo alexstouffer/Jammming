@@ -15,10 +15,10 @@ class Track extends React.Component {
             return <a className="track-action" onClick={this.removeTrack}>-</a>
         }
     }
-    addTrack(e) {
+    addTrack() {
         this.props.onAdd(this.props.track);
     }
-    removeTrack(e) {
+    removeTrack() {
         this.props.onRemove(this.props.track);
     }
     render() {
