@@ -15,15 +15,13 @@ class SearchBar extends React.Component {
     search() {
         this.props.onSearch(this.state.searchTerm);
     }
-    handleKeyPress(event) {
-        this.setState({searchTerm: event.target.value});
-
-        if(event.which === 13) {
-            return this.search;
-        }
-    }
     handleTermChange(event) {
         this.setState({searchTerm: event.target.value});
+    }
+    handleKeyPress(event) {
+        if (event.keyCode === 'Enter' || event.keyCode === 13) {
+            return this.search;
+        }
     }
     render() {
         return (
