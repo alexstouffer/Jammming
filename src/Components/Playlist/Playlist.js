@@ -15,8 +15,9 @@ class Playlist extends React.Component {
         this.props.onNameChange(event.target.value);
     }
     handleKeyPress(event) {
-        if (this.props.playlistName !== 'New Playlist' && event.which === 13){
-            return this.onSave;
+        if (event.key === 'Enter'){
+            console.log('Key has been pressed');
+            this.props.onSave();
         }
     }
     render() {
