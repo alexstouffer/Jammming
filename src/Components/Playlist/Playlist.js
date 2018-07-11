@@ -2,7 +2,7 @@ import React from 'react';
 import './Playlist.css';
 
 import TrackList from '../TrackList/TrackList';
-import Spotify from '../../util/spotify';
+
 
 class Playlist extends React.Component {
     constructor(props) {
@@ -23,7 +23,7 @@ class Playlist extends React.Component {
     render() {
         return (
             <div className="Playlist">
-                <input onChange={this.handleNameChange} value={this.props.playlistName} defaultValue={'New Playlist'} onKeyPress={this.handleKeyPress}/>
+                <input onChange={this.handleNameChange} value={this.props.playlistName} onKeyPress={this.handleKeyPress}/>
                 <TrackList onRemove={this.props.onRemove} 
                 tracks={this.props.playlistTracks}
                 isRemoval={true}/>
